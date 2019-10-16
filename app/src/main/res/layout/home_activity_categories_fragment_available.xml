@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/testRecyclerHorizontalTabs"
+            android:layout_weight="0.1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_weight="0.9"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="2dp"
+            android:layout_width="match_parent"
+            android:id="@+id/testRecyclerVerticalCards"
+            android:layout_height="0dp" />
+
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/background">
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/signup_border">
+
+            <ImageView
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginLeft="12dp"
+                android:src="@drawable/email"/>
+
+            <EditText
+                android:backgroundTint="@android:color/transparent"
+                android:id="@+id/userEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:imeOptions="actionDone"
+                android:textSize="@dimen/button_text_large"
+                android:paddingLeft="40dp"
+                android:paddingRight="10dp"
+                android:drawablePadding="8dp"
+                android:inputType="text"
+                android:maxLines="1">
+                <requestFocus />
+            </EditText>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/signup_border">
+
+            <ImageView
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginLeft="12dp"
+                android:src="@drawable/password"/>
+
+            <EditText
+                android:backgroundTint="@android:color/transparent"
+                android:id="@+id/userPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:imeOptions="actionDone"
+                android:textSize="@dimen/button_text_large"
+                android:paddingLeft="40dp"
+                android:paddingRight="10dp"
+                android:drawablePadding="8dp"
+                android:inputType="textPassword"
+                android:maxLines="1">
+                <requestFocus />
+            </EditText>
+        </FrameLayout>
+
+        <android.support.v7.widget.CardView
+            android:layout_marginBottom="5dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_width="match_parent"
+            android:layout_gravity="top|center_horizontal"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:elevation="5dp"
+            app:cardCornerRadius="5dp">
+
+            <FrameLayout
+                android:alpha="0.7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary">
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/login"
+                android:text="SIGN IN"
+                android:textColor="#fbfbfb"
+                android:textSize="@dimen/button_text_large"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@android:color/transparent" />
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</FrameLayout>

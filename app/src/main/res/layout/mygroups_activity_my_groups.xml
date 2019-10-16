@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentMainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="100">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="90"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:focusableInTouchMode="true"> <!-- Prevents scrolling location from being overriden by RecyclerView -->
+
+            <android.support.v7.widget.CardView
+                android:visibility="invisible"
+                android:id="@+id/id_favoriteGroup"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="top|center_horizontal"
+                android:background="#f3f3f3"
+                app:cardBackgroundColor="#FFFFFF"
+                app:elevation="5dp">
+
+                <LinearLayout
+                    android:gravity="top|center_horizontal"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:cardCornerRadius="15dp"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/id_groupImage"
+                            android:src="@drawable/mygroups_group_icon"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"/>
+
+                    </android.support.v7.widget.CardView>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/id_groupName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Favorites"
+                            android:textSize="@dimen/button_text_large"
+                            android:gravity="left"
+                            android:textStyle="bold"
+                            android:layout_gravity="center"/>
+
+                        <TextView
+                            android:id="@+id/id_groupMembersCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Number of members"
+                            android:textSize="@dimen/button_text_large"
+                            android:gravity="left"
+                            android:textStyle="italic"
+                            android:layout_gravity="center"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--<ImageView
+                    android:id="@+id/id_groupMenu"
+                    android:src="@drawable/mygroups_menu_dots"
+                    android:padding="5dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="right|center_vertical"/>-->
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_margin="3dp"
+                android:layout_width="match_parent"
+                android:id="@+id/id_liveAuctionsRecyclerView"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/id_addGroup"
+            android:layout_weight="10"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/colorPrimary">
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_gravity="center"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/add_white"/>
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ADD GROUP"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/button_text_large"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>

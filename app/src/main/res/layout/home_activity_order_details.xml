@@ -1,0 +1,210 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_gravity="center"
+    android:id="@+id/parentLayoutOrderDetails">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="100">
+
+        <LinearLayout
+            android:layout_weight="45"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:background="#ffffff">
+
+            <ImageView
+                android:id="@+id/productsImage"
+                android:src="@drawable/order_details"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="45"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_weight="0.6"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="0.6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/order"
+                        android:textSize="12dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Order : #547870"/>
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:textSize="14dp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Canon Camera"/>
+
+                    <TextView
+                        android:id="@+id/company"
+                        android:textSize="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Company : Canon"/>
+
+                    <TextView
+                        android:id="@+id/riyal"
+                        android:textSize="14dp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="1125 Riyals"/>
+
+                    <TextView
+                        android:id="@+id/auctioneer"
+                        android:textSize="14dp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Auctioneer : John Doe"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="0.6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/returnAndExchange"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Return and Exchange Policy"/>
+
+                    <TextView
+                        android:id="@+id/returnPolicy"
+                        android:layout_marginTop="3dp"
+                        android:textSize="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Return within 7 days from purchase"/>
+
+                    <TextView
+                        android:id="@+id/exchangePolicy"
+                        android:layout_marginTop="2dp"
+                        android:textSize="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Exchange within 30 days from purchase"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TableRow
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="#a9a9a9"
+                android:layout_width="match_parent"
+                android:layout_height="1dp">
+            </TableRow>
+            <FrameLayout
+                android:layout_weight="0.4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_gravity="left|center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_gravity="left|center_vertical"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/delivered"
+                            android:textSize="14dp"
+                            android:textStyle="bold"
+                            android:layout_gravity="top|left"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Delivered"/>
+
+                        <TextView
+                            android:id="@+id/date"
+                            android:textSize="10dp"
+                            android:layout_gravity="top|left"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Date : 15/05/2017 at 5:31 am"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+                
+
+            </FrameLayout>
+        </LinearLayout>
+        <FrameLayout
+            android:layout_weight="10"
+            android:layout_gravity="bottom"
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <LinearLayout
+                android:padding="5dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:src="@drawable/return_or_exchange"
+                    android:layout_gravity="top|left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#FFFFFF"
+                    android:layout_gravity="top|left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RETURN OR EXCHANGE"/>
+
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>

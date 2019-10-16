@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentMyAuctionActivity">
+
+    <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="100">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:weightSum="100"
+                android:layout_weight="90"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:focusableInTouchMode="true"> <!-- Prevents scrolling location from being overriden by RecyclerView -->
+
+                <FrameLayout
+                    android:layout_weight="45"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+
+                    <ImageView
+                        android:id="@+id/productsImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"/>
+
+                    <FrameLayout
+                        android:alpha="0.50"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:background="@color/colorPrimary">
+
+                        <LinearLayout
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_gravity="center"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/home_auction_clock"/>
+                            <TextView
+                                android:id="@+id/remainingTime"
+                                android:layout_marginLeft="30dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="00 : 00 : 00"
+                                android:textColor="#FFFFFF"
+                                android:textSize="@dimen/button_text_large"
+                                android:textStyle="bold"/>
+                        </LinearLayout>
+                    </FrameLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_weight="10"
+                    android:id="@+id/nonAuctionViews"
+                    android:layout_gravity="top|center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/productsName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Product name"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/button_text_large"
+                        android:layout_marginLeft="20dp"
+                        android:layout_gravity="left|center_vertical"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/productsPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SR 50000"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/button_text_large"
+                        android:layout_marginRight="20dp"
+                        android:layout_gravity="right|center_vertical"
+                        android:gravity="center"/>
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_weight="10"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+
+                    <LinearLayout
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <FrameLayout
+                            android:backgroundTint="@color/colorAccent"
+                            android:layout_weight="1.25"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_marginLeft="10dp"
+                                android:layout_gravity="left|center_vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="SR"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/button_text_large"/>
+                            <EditText
+                                android:textSize="@dimen/button_text_large"
+                                android:id="@+id/biddingPrice"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="number"
+                                android:maxLength="10"
+                                android:gravity="center"
+                                android:backgroundTint="@android:color/transparent"
+                                android:hint="bidding price"
+                                android:imeOptions="actionDone"
+                                android:windowSoftInputMode="adjustPan">
+                                <requestFocus />
+                            </EditText>
+                        </FrameLayout>
+
+                        <Button
+                            android:alpha="0.75"
+                            android:textColor="#FFFFFF"
+                            android:background="@color/colorPrimaryDark"
+                            android:id="@+id/makeAnOffer"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:textSize="@dimen/button_text_large"
+                            android:layout_height="wrap_content"
+                            android:text="MAKE AN OFFER"/>
+                    </LinearLayout>
+                </FrameLayout>
+
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_weight="35"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="3dp">
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="left|center_vertical"
+                                android:layout_margin="15dp"
+                                app:cardCornerRadius="15dp">
+
+                                <ImageView
+                                    android:src="@drawable/home_auction_bid"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:scaleType="centerCrop"/>
+
+                            </android.support.v7.widget.CardView>
+
+                            <TextView
+                                android:textSize="@dimen/button_text"
+                                android:layout_gravity="left|center_vertical"
+                                android:layout_marginLeft="60dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#3e4a66"
+                                android:textStyle="bold"
+                                android:text="user@example.com"/>
+
+                            <TextView
+                                android:textSize="@dimen/button_text"
+                                android:layout_gravity="right|center_vertical"
+                                android:layout_marginRight="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#3e4a66"
+                                android:textStyle="bold"
+                                android:text="SR 71000"/>
+                        </android.support.v7.widget.CardView>
+                        <android.support.v7.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="3dp">
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="left|center_vertical"
+                                android:layout_margin="15dp"
+                                app:cardCornerRadius="15dp">
+
+                                <ImageView
+                                    android:src="@drawable/home_auction_bid"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:scaleType="centerCrop"/>
+
+                            </android.support.v7.widget.CardView>
+
+                            <TextView
+                                android:textSize="@dimen/button_text"
+                                android:layout_gravity="left|center_vertical"
+                                android:layout_marginLeft="60dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#3e4a66"
+                                android:textStyle="bold"
+                                android:text="user@example.com"/>
+
+                            <TextView
+                                android:textSize="@dimen/button_text"
+                                android:layout_gravity="right|center_vertical"
+                                android:layout_marginRight="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#3e4a66"
+                                android:textStyle="bold"
+                                android:text="SR 71000"/>
+                        </android.support.v7.widget.CardView>
+                        <android.support.v7.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="3dp">
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="left|center_vertical"
+                                android:layout_margin="15dp"
+                                app:cardCornerRadius="15dp">
+
+                                <ImageView
+                                    android:src="@drawable/home_auction_bid"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:scaleType="centerCrop"/>
+
+                            </android.support.v7.widget.CardView>
+
+                            <TextView
+                                android:textSize="@dimen/button_text"
+                                android:layout_gravity="left|center_vertical"
+                                android:layout_marginLeft="60dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#3e4a66"
+                                android:textStyle="bold"
+                                android:text="user@example.com"/>
+
+                            <TextView
+                                android:textSize="@dimen/button_text"
+                                android:layout_gravity="right|center_vertical"
+                                android:layout_marginRight="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#3e4a66"
+                                android:textStyle="bold"
+                                android:text="SR 71000"/>
+                        </android.support.v7.widget.CardView>
+                        <android.support.v7.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="3dp">
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="left|center_vertical"
+                                android:layout_margin="15dp"
+                                app:cardCornerRadius="15dp">
+
+                                <ImageView
+                                    android:src="@drawable/home_auction_bid"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:scaleType="centerCrop"/>
+
+                            </android.support.v7.widget.CardView>
+
+                            <TextView
+                                android:textSize="@dimen/button_text"
+                                android:layout_gravity="left|center_vertical"
+                                android:layout_marginLeft="60dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#3e4a66"
+                                android:textStyle="bold"
+                                android:text="user@example.com"/>
+
+                            <TextView
+                                android:textSize="@dimen/button_text"
+                                android:layout_gravity="right|center_vertical"
+                                android:layout_marginRight="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#3e4a66"
+                                android:textStyle="bold"
+                                android:text="SR 71000"/>
+                        </android.support.v7.widget.CardView>
+                        <android.support.v7.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="3dp">
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="left|center_vertical"
+                                android:layout_margin="15dp"
+                                app:cardCornerRadius="15dp">
+
+                                <ImageView
+                                    android:src="@drawable/home_auction_bid"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:scaleType="centerCrop"/>
+
+                            </android.support.v7.widget.CardView>
+
+                            <TextView
+                                android:textSize="@dimen/button_text"
+                                android:layout_gravity="left|center_vertical"
+                                android:layout_marginLeft="60dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#3e4a66"
+                                android:textStyle="bold"
+                                android:text="user@example.com"/>
+
+                            <TextView
+                                android:textSize="@dimen/button_text"
+                                android:layout_gravity="right|center_vertical"
+                                android:layout_marginRight="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#3e4a66"
+                                android:textStyle="bold"
+                                android:text="SR 71000"/>
+                        </android.support.v7.widget.CardView>
+                        <android.support.v7.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="3dp">
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="left|center_vertical"
+                                android:layout_margin="15dp"
+                                app:cardCornerRadius="15dp">
+
+                                <ImageView
+                                    android:src="@drawable/home_auction_bid"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:scaleType="centerCrop"/>
+
+                            </android.support.v7.widget.CardView>
+
+                            <TextView
+                                android:textSize="@dimen/button_text"
+                                android:layout_gravity="left|center_vertical"
+                                android:layout_marginLeft="60dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#3e4a66"
+                                android:textStyle="bold"
+                                android:text="user@example.com"/>
+
+                            <TextView
+                                android:textSize="@dimen/button_text"
+                                android:layout_gravity="right|center_vertical"
+                                android:layout_marginRight="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#3e4a66"
+                                android:textStyle="bold"
+                                android:text="SR 71000"/>
+                        </android.support.v7.widget.CardView>
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/id_addMember"
+                android:layout_weight="10"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/colorPrimary">
+
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MORE PRODUCT DETAILS"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/button_text_large"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
+</FrameLayout>

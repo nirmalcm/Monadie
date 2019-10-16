@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/id_parentAddGroupActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="100">
+
+        <FrameLayout
+            android:layout_weight="90"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:focusableInTouchMode="true"> <!-- Prevents scrolling location from being overriden by RecyclerView -->
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/id_groupNameLayout"
+                    android:layout_width="250dp"
+                    android:layout_height="100dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:background="@drawable/signup_border">
+
+                    <EditText
+                        android:layout_gravity="center"
+                        android:backgroundTint="@android:color/transparent"
+                        android:id="@+id/id_groupName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:textSize="@dimen/button_text_large"
+                        android:gravity="center"
+                        android:hint="Group Name" />
+                </android.support.design.widget.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/id_numberOfMembers"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0 Members added"
+                    android:textStyle="italic"
+                    android:gravity="center"
+                    android:textSize="@dimen/button_text"/>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/id_addMembers"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="250dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="top|center_horizontal"
+                    android:background="#f3f3f3"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:elevation="5dp"
+                    app:cardCornerRadius="15dp">
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Add Members"
+                        android:textAllCaps="true"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF"
+                        android:gravity="center"
+                        android:textSize="@dimen/button_text_large"/>
+
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/id_done"
+            android:layout_weight="10"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/colorPrimary">
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_gravity="center"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/right"/>
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DONE"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/button_text_large"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>

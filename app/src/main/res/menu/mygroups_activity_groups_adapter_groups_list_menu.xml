@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/id_menu_deleteGroup"
+        android:orderInCategory="100"
+        android:title="Delete Group" />
+
+    <item
+        android:id="@+id/id_menu_editGroup"
+        android:orderInCategory="101"
+        android:title="Edit Group" />
+</menu>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.spectrographix.monadie">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:name=".utility.AppController"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ui.home.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ui.home.LaunchActivity"></activity>
+        <activity android:name=".ui.home.LoginActivity"></activity>
+        <activity android:name=".ui.home.RegisterActivity"></activity>
+        <activity android:name=".ui.home.AuctionActivity"></activity>
+
+        <activity android:name=".ui.myproducts.MyProductsActivity"></activity>
+        <activity android:name=".ui.myproducts.MyProductActivity"></activity>
+
+        <activity android:name=".ui.myauctions.MyAuctionsActivity"></activity>
+        <activity android:name=".ui.myauctions.AddAuctionGroupsActivity"></activity>
+        <activity android:name=".ui.myauctions.CreateAuctionOneActivity"></activity>
+        <activity android:name=".ui.myauctions.CreateAuctionTwoActivity"></activity>
+
+        <activity android:name=".ui.mygroups.AddMembersActivity"></activity>
+        <activity android:name=".ui.mygroups.MyGroupActivity"></activity>
+        <activity android:name=".ui.mygroups.MyGroupsActivity"></activity>
+        <activity android:name=".ui.mygroups.CreateGroupActivity"></activity>
+
+        <activity android:name=".ui.mygroups.AddFavoritesActivity"></activity>
+        <activity android:name=".ui.mygroups.MyFavoritesActivity"></activity>
+
+        <activity android:name=".ui.settings.SettingsActivity"></activity>
+
+        <activity android:name=".ui.settings.ChangePasswordActivity"></activity>
+        <activity android:name=".ui.settings.EditProfileActivity"></activity>
+        <activity android:name=".ui.settings.FinancialInformationActivity"></activity>
+        <activity android:name=".ui.settings.LinkedAccountsActivity"></activity>
+        <activity android:name=".ui.settings.NotificationSettingsActivity"></activity>
+        <activity android:name=".ui.settings.ReportProblemActivity"></activity>
+        <activity android:name=".ui.settings.VerificationActivity"></activity>
+    </application>
+
+</manifest>

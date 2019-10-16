@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="100">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="90">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fbfbfb"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_margin="20dp"
+                    android:layout_height="200dp">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:cardCornerRadius="10dp">
+
+                        <ImageView
+                            android:src="@drawable/dummy_product"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/productImage"
+                            android:scaleType="centerCrop"
+                            android:layout_gravity="center"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="20dp"
+                                android:layout_gravity="right|bottom"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:src="@drawable/takephoto"
+                                    android:id="@+id/takePhoto"/>
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="10dp"
+                                    android:src="@drawable/pickphoto"
+                                    android:id="@+id/choosePhoto" />
+
+                            </LinearLayout>
+
+                            </android.support.v7.widget.CardView>
+
+                </FrameLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fbfbfb"
+                    android:orientation="vertical"
+                    android:layout_margin="20dp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/search_border">
+
+                        <EditText
+                            android:backgroundTint="@android:color/transparent"
+                            android:id="@+id/productName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:imeOptions="actionDone"
+                            android:maxLines="1"
+                            android:hint="Name"
+                            android:textSize="18dp"
+                            android:paddingLeft="15dp">
+                        </EditText>
+                    </FrameLayout>
+
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/search_border">
+
+                        <EditText
+                            android:backgroundTint="@android:color/transparent"
+                            android:id="@+id/productPrice"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:inputType="number"
+                            android:imeOptions="actionDone"
+                            android:maxLines="1"
+                            android:hint="Price"
+                            android:textSize="18dp"
+                            android:paddingLeft="15dp">
+                        </EditText>
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/search_border">
+
+                        <EditText
+                            android:backgroundTint="@android:color/transparent"
+                            android:id="@+id/productDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="text"
+                            android:imeOptions="actionDone"
+                            android:gravity="start"
+                            android:maxLines="5"
+                            android:hint="Description"
+                            android:textSize="18dp"
+                            android:paddingLeft="15dp">
+                        </EditText>
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/search_border">
+
+                        <Spinner
+                            android:id="@+id/productMainCategorySpinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:paddingLeft="10dp"/>
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/search_border">
+
+                        <Spinner
+                            android:id="@+id/productSubCategorySpinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:paddingLeft="10dp"/>
+
+                    </FrameLayout>
+
+                    <CheckBox
+                        android:id="@+id/isAddingToAuction"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:gravity="left|center_vertical"
+                        android:text="Make an early deal to favorites !"
+                        android:textSize="12dp"/>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/search_border">
+
+                        <EditText
+                            android:backgroundTint="@android:color/transparent"
+                            android:id="@+id/basePriceField"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:imeOptions="actionDone"
+                            android:maxLines="1"
+                            android:hint="Base Price"
+                            android:textSize="18dp"
+                            android:paddingLeft="15dp">
+                        </EditText>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="center_vertical|right"
+                            android:src="@drawable/price"/>
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:id="@+id/setStartTime"
+                            android:textColor="#fa7a66"
+                            android:textStyle="bold"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:text="START TIME"/>
+
+                        <TextView
+                            android:textSize="@dimen/button_text_large"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:id="@+id/startTime"
+                            android:padding="10dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00/00/0000 \n00:00::00"/>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:textSize="@dimen/button_text_large"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:id="@+id/setEndTime"
+                            android:textColor="#fa7a66"
+                            android:textStyle="bold"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:text="END TIME"/>
+
+
+                        <TextView
+                            android:textSize="@dimen/button_text_large"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:id="@+id/endTime"
+                            android:padding="10dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00/00/0000 \n00:00::00"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/topbottom_style"
+            android:layout_weight="10">
+
+            <FrameLayout
+                android:id="@+id/addToAuction"
+                android:layout_width="match_parent"
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_background">
+
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/add_plus"/>
+                    <TextView
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Next"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/button_text_large"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
